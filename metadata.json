@@ -1,0 +1,7 @@
+{
+  "name": "EzviNet Electrical Wire & Switches Order",
+  "description": "Professional order and quotation management platform for electrical wires, cables, modular switches, and accessories by EzviNet Technology.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs android/capacitor-cordova-android-plugins/src/main/libs, android/app/libs
+        }
+    }
+}
+
+rootProject.name = "EzviNet Wire Order"
+
+include :app
+project(:app).projectDir = new File(android/app)
+
+include :capacitor-cordova-android-plugins
+project(:capacitor-cordova-android-plugins).projectDir = new File(android/capacitor-cordova-android-plugins)
+
+include :capacitor-android
+if (new File(android/capacitor-android).exists()) {
+    project(:capacitor-android).projectDir = new File(android/capacitor-android)
+} else {
+    project(:capacitor-android).projectDir = new File(node_modules/@capacitor/android/capacitor)
+}
